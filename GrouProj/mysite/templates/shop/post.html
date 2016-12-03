@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+		<form action="/post/" method="post" class="post-form">{% csrf_token%}			
+			{{ form.as_p }}
+		<input class="button" type="submit" value="Market">
+		</form>
+{% endblock %}

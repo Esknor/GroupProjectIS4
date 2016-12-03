@@ -1,0 +1,20 @@
+vov4ik
+198ekoliceym
+
+                  <h2>Tags</h2>
+                  {% if tags_name %}       
+                    <ul>
+                        {% for tag in tags_name %}
+                        <li><a href ="">{{ tag.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                        <strong>There are no tags present.</strong>
+                    {% endif %}
+ 		<h3>Monthly Archive</h3>
+                  <div>
+                      {% for month in months %} 
+                           <a href="{% url 'blog:archive' month.0 month.1 %}">{{ month.2 }}</a> <br /> 
+                      {% endfor %}
+                  </div>
+

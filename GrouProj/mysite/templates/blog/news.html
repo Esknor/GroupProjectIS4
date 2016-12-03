@@ -1,0 +1,10 @@
+{% extends "news.html" %}
+{% load humanize %}
+
+{% block content %}
+    {% for article in article_list %}
+        {% include "blog/_entry.html" with article=article only %}
+    {% empty %}
+        <p>No entries yet.</p>
+    {% endfor %}
+{% endblock content %}

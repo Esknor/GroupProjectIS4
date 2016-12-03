@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load latest_posts popular_posts %}
+{% block head_title %}My Cool Django Gallery  {% endblock %}
+
+      <!-- row of columns -->
+      {% block content %}       
+
+            {% block main %} 
+            {% endblock main %} 
+        
+            {% block aside %}
+		 <h2>Categories</h2>
+                  {% if categories_list %}       
+                    <ul>
+                        {% for category in categories_list %}
+                        <li><a href ="{% url 'blog:category' category.slug %}">{{ category.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+
+                    {% else %}
+                    <strong>There are no categories present.</strong>
+                  {% endif %} 
+                  <h2>Latest Posts</h2>
+                  <div>
+                      {% latest_posts %}
+                  </div>
+
+                  <h2>Popular Posts</h2>
+                  <div>
+                      {% popular_posts %}
+                  </div>
+		
+                  <h3>Monthly Archive</h3>
+                  <div>
+                      {% for month in months %} 
+                           <a href="{% url 'blog:archive' month.0 month.1 %}">{{ month.2 }}</a> <br /> 
+                      {% endfor %}
+                  </div>
+            {% endblock aside %} 
+        {% endblock content %} 

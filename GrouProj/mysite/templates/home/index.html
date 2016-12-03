@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block head_title %}My Cool Internet Gallery{% endblock %}
+<!-- Main jumbotron for a primary marketing message or call to action -->
+    {% block jumbotron %} 
+
+    
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Welcome to gallery!</h1>
+        <p>This is a simple marketing and informational website.Use it to post your masterpiece.</p>
+	{% if user.is_authenticated %}
+        <p><a class="btn btn-primary btn-lg" href="/blog/post/" role="button">Publicate &raquo;</a></p>
+	<p><a class="btn btn-primary btn-lg" href="/post/" role="button">Salle &raquo;</a></p>
+	{% endif %}
+      </div>
+    </div>
+{% endblock jumbotron %}
+
+{% block content %} 
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Advertisement</h2>
+          <p>If you want to publicate your work send here 4etvertui-reih@mail.ru.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Advertisement</h2>
+          <p>service from two graffiti artists number:XXXXXXXXXXX.</p>
+          <p><a class="btn btn-default" href="http://127.0.0.1:8000/blog/wall/" role="button">View details &raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <h2>Advertisement</h2>
+          <p>Nothing</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+
+{% endblock content %}
