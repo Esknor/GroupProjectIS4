@@ -16,7 +16,7 @@ def recent_comments():
         if comment.website:
             output += '<li><a href="' + comment.website + '">' + comment.name + '</a> - <a href="' + comment.entry.get_absolute_url() + '">' + comment.entry.title + '</a></li>'
         elif comment.user:
-            output += '<li><a href="http://www.github.com/janusnic">' + comment.user.get_full_name() + '</a> - <a href="' + comment.entry.get_absolute_url() + '">' + comment.entry.title + '</a></li>'
+            output += '<li><a href="http://www.github.com/Esknor">' + comment.user.get_full_name() + '</a> - <a href="' + comment.entry.get_absolute_url() + '">' + comment.entry.title + '</a></li>'
         else:
             output += '<li>' + comment.name + ' - <a href="' + comment.entry.get_absolute_url() + '">' + comment.entry.title + '</a></li>'
     output += '</ul>'
